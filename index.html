@@ -4,45 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NeonNova | All-In-One Discord Bot</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Inter',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f14;
+background:#0c0c12;
 color:#fff;
+overflow-x:hidden;
 }
 
+/* NAVBAR */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
-background:#0b0b10;
+padding:22px 8%;
 position:fixed;
 width:100%;
+background:rgba(12,12,18,0.8);
+backdrop-filter:blur(12px);
 z-index:1000;
-border-bottom:1px solid #1a1a22;
+border-bottom:1px solid #1a1a25;
 }
 
 .logo{
+font-size:20px;
 font-weight:800;
-font-size:22px;
-background:linear-gradient(90deg,#00f5ff,#5865f2);
+letter-spacing:1px;
+background:linear-gradient(90deg,#6c5cff,#00e5ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 nav a{
 color:#aaa;
-margin-left:25px;
+margin-left:30px;
 text-decoration:none;
 font-weight:500;
 transition:0.3s;
@@ -61,143 +65,140 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:0 20px;
-background:radial-gradient(circle at 30% 20%, #1a1a2e, #0f0f14);
+background:
+radial-gradient(circle at 30% 20%, #1b1b2e 0%, transparent 40%),
+radial-gradient(circle at 70% 80%, #15152b 0%, transparent 40%);
 }
 
 .hero h1{
-font-size:65px;
+font-size:72px;
 font-weight:800;
-background:linear-gradient(90deg,#00f5ff,#5865f2);
+line-height:1.1;
+background:linear-gradient(90deg,#6c5cff,#00e5ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:20px;
+margin-top:25px;
 color:#aaa;
-max-width:600px;
+font-size:18px;
+max-width:650px;
 }
 
 .buttons{
-margin-top:30px;
+margin-top:35px;
 }
 
 .btn{
-padding:14px 35px;
-border-radius:8px;
+padding:15px 40px;
+border-radius:10px;
 border:none;
-cursor:pointer;
 font-weight:600;
+cursor:pointer;
 margin:10px;
 transition:0.3s;
 }
 
 .primary{
-background:linear-gradient(90deg,#00f5ff,#5865f2);
+background:linear-gradient(90deg,#6c5cff,#00e5ff);
 color:#000;
 }
 
 .primary:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 }
 
 .secondary{
-background:#1a1a22;
+background:#161622;
 color:#fff;
 }
 
 .secondary:hover{
-background:#222230;
-}
-
-/* STATS */
-.stats{
-display:flex;
-justify-content:center;
-gap:80px;
-padding:80px 8%;
-background:#0b0b10;
-flex-wrap:wrap;
-}
-
-.stat{
-text-align:center;
-}
-
-.stat h2{
-font-size:40px;
-background:linear-gradient(90deg,#00f5ff,#5865f2);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.stat p{
-color:#aaa;
+background:#1e1e2c;
 }
 
 /* FEATURES */
 .section{
-padding:100px 8%;
+padding:120px 8%;
 text-align:center;
 }
 
+.section h2{
+font-size:40px;
+margin-bottom:60px;
+}
+
 .grid{
-margin-top:60px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:40px;
 }
 
 .card{
-background:#15151d;
-padding:35px;
-border-radius:12px;
-border:1px solid #1f1f28;
+background:#141421;
+padding:40px;
+border-radius:14px;
+border:1px solid #1f1f30;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border-color:#5865f2;
+transform:translateY(-10px);
+border-color:#6c5cff;
 }
 
 .card h3{
 margin-bottom:15px;
+font-size:20px;
 }
 
-/* PRICING */
-.pricing{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
-margin-top:60px;
+.card p{
+color:#aaa;
 }
 
-.price-card{
-background:#15151d;
-padding:40px;
-border-radius:12px;
-border:1px solid #1f1f28;
-transition:0.3s;
+/* FEATURE SPLIT SECTION (Fyrex style layout) */
+.split{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:60px;
+padding:120px 8%;
 }
 
-.price-card:hover{
-transform:translateY(-8px);
-border-color:#00f5ff;
+.split-text{
+flex:1;
+min-width:300px;
 }
 
-.price{
-font-size:35px;
-margin:15px 0;
-font-weight:700;
+.split-text h2{
+font-size:42px;
+margin-bottom:20px;
 }
 
+.split-text p{
+color:#aaa;
+margin-bottom:25px;
+}
+
+.split-box{
+flex:1;
+min-width:300px;
+background:#141421;
+padding:50px;
+border-radius:16px;
+border:1px solid #1f1f30;
+}
+
+/* FOOTER */
 footer{
-background:#0b0b10;
-padding:40px;
+background:#0a0a10;
+padding:50px;
 text-align:center;
 color:#666;
 margin-top:100px;
+border-top:1px solid #1a1a25;
 }
 </style>
 </head>
@@ -208,77 +209,53 @@ margin-top:100px;
 <div class="logo">NeonNova</div>
 <nav>
 <a href="#features">Features</a>
-<a href="#pricing">Premium</a>
+<a href="#premium">Premium</a>
 <a href="#">Support</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>NeonNova</h1>
-<p>The ultimate all-in-one Discord bot built for protection, moderation, music, automation and premium server management.</p>
+<h1>Power Your Discord<br>With NeonNova</h1>
+<p>The ultimate all-in-one Discord bot built for protection, moderation, music, automation and elite server management.</p>
 <div class="buttons">
 <button class="btn primary">Invite Bot</button>
 <button class="btn secondary">Dashboard</button>
 </div>
 </section>
 
-<section class="stats">
-<div class="stat">
-<h2>25K+</h2>
-<p>Servers</p>
-</div>
-<div class="stat">
-<h2>1.2M+</h2>
-<p>Users</p>
-</div>
-<div class="stat">
-<h2>99.9%</h2>
-<p>Uptime</p>
-</div>
-</section>
-
 <section class="section" id="features">
-<h2>Powerful Features</h2>
+<h2>Everything You Need</h2>
 <div class="grid">
 <div class="card">
 <h3>🛡 Advanced Protection</h3>
-<p>Anti-nuke, anti-raid and smart auto moderation.</p>
+<p>Anti-nuke, anti-raid and intelligent security system.</p>
 </div>
 <div class="card">
-<h3>🎵 Music System</h3>
-<p>High quality streaming with filters & playlists.</p>
+<h3>⚙ Powerful Moderation</h3>
+<p>Ban, kick, warn, mute and complete server control tools.</p>
 </div>
 <div class="card">
-<h3>🎟 Ticket System</h3>
-<p>Modern support panel & auto logging system.</p>
+<h3>🎵 High Quality Music</h3>
+<p>Lag-free streaming, playlists and premium filters.</p>
 </div>
 <div class="card">
-<h3>⚙ Automation</h3>
-<p>Auto roles, welcome messages and reaction roles.</p>
+<h3>🎟 Ticket & Logs</h3>
+<p>Professional support system and detailed logging.</p>
 </div>
 </div>
 </section>
 
-<section class="section" id="pricing">
-<h2>Premium Plans</h2>
-<div class="pricing">
-<div class="price-card">
-<h3>Free</h3>
-<div class="price">$0</div>
-<p>Basic Features<br>Standard Support</p>
+<section class="split">
+<div class="split-text">
+<h2>Built For Performance</h2>
+<p>NeonNova is optimized for speed, reliability and scalability. Designed to handle thousands of servers without performance drops.</p>
+<button class="btn primary">Get Started</button>
 </div>
-
-<div class="price-card">
-<h3>Pro</h3>
-<div class="price">$6/mo</div>
-<p>Advanced Protection<br>Premium Music<br>Priority Support</p>
-</div>
-
-<div class="price-card">
-<h3>Elite</h3>
-<div class="price">$12/mo</div>
-<p>All Features<br>Custom Branding<br>VIP Support</p>
-</div>
+<div class="split-box">
+<p style="color:#aaa;">✔ 99.9% Uptime<br><br>
+✔ Fast Command Response<br><br>
+✔ Smart Auto Moderation<br><br>
+✔ Clean Dashboard UI</p>
 </div>
 </section>
 
